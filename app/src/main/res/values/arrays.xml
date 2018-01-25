@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="texts">
+        <item>@raw/autobus</item>
+        <item>@raw/buenos_aires</item>
+        <item>@raw/cycki</item>
+        <item>@raw/czesc_waldek</item>
+        <item>@raw/czujny</item>
+        <item>@raw/dawaj_zloto</item>
+        <item>@raw/dobranoc</item>
+        <item>@raw/drink</item>
+        <item>@raw/friend</item>
+        <item>@raw/gdzie_z_rencoma</item>
+        <item>@raw/gdzies_byla</item>
+        <item>@raw/gon</item>
+        <item>@raw/gowno_wiecie</item>
+        <item>@raw/jedz</item>
+        <item>@raw/jeszcze_jedno</item>
+        <item>@raw/kryminalisci</item>
+        <item>@raw/kto_to_jest</item>
+        <item>@raw/lafirynda</item>
+        <item>@raw/ma_byc_tak</item>
+        <item>@raw/mordeczko</item>
+        <item>@raw/nadplacic</item>
+        <item>@raw/niekulturalnie</item>
+        <item>@raw/no</item>
+        <item>@raw/rozmach</item>
+        <item>@raw/sukces</item>
+        <item>@raw/szpraj</item>
+        <item>@raw/w_imieniu</item>
+        <item>@raw/wichura</item>
+        <item>@raw/wszystko</item>
+        <item>@raw/wyladowal</item>
+        <item>@raw/zabije</item>
+        <item>@raw/zaimponowales</item>
+        <item>@raw/zamknij_morde</item>
+        <item>@raw/zlecenie</item>
+    </integer-array>
+</resources>

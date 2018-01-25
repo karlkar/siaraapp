@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="pl.kksionek.siaraapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/siaraImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/siara"
+        android:scaleType="fitCenter"
+        android:keepScreenOn="true"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="0dp" />
+
+    <Button
+        android:id="@+id/happyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siara jest zadowolony"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/siaraImage"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/sadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siara jest zły"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/siaraImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" />
+</android.support.constraint.ConstraintLayout>
