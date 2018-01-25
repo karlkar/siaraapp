@@ -4,7 +4,6 @@ import android.app.Service
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
-import android.util.Log
 import java.util.*
 
 val BUNDLE_KEY_MOOD = "MOOD"
@@ -33,7 +32,6 @@ class PlayService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d("KAROL", "Start")
         if (mMediaPlayer != null) {
             mMediaPlayer?.stop()
             mMediaPlayer?.release()

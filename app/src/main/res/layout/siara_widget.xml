@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    
+    <ImageButton
+        android:id="@+id/button_good"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_symbol_thumbs_up"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/siara"
+        android:scaleType="fitCenter"/>
+    
+    <ImageButton
+        android:id="@+id/button_bad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_symbol_thumbs_down"/>
+
+</LinearLayout>
