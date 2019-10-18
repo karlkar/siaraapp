@@ -6,45 +6,44 @@ import android.media.MediaPlayer
 import android.os.IBinder
 import java.util.*
 
-val BUNDLE_KEY_MOOD = "MOOD"
-val BUNDLE_VAL_HAPPY = "HAPPY"
-val BUNDLE_VAL_SAD = "SAD"
+const val BUNDLE_KEY_MOOD = "MOOD"
+const val BUNDLE_VAL_HAPPY = "HAPPY"
+const val BUNDLE_VAL_SAD = "SAD"
 
 class PlayService : Service() {
 
-    private var mMediaPlayer: MediaPlayer? = null
-    lateinit private var mResIds: IntArray
-    private val mRand: Random = Random()
+    private var mediaPlayer: MediaPlayer? = null
+    private lateinit var resIds: List<Int>
+    private val rand: Random = Random()
 
     override fun onBind(intent: Intent): IBinder? {
-        throw UnsupportedOperationException("Not yet implemented")
+        throw UnsupportedOperationException("Not implemented")
     }
 
     override fun onCreate() {
         super.onCreate()
 
-        val sounds = resources.obtainTypedArray(R.array.texts)
-        mResIds = IntArray(sounds.length())
-        for (i in 0 until sounds.length()) {
-            mResIds[i] = sounds.getResourceId(i, -1)
-        }
-        sounds.recycle()
+        resIds = R.raw::class.java.fields
+            .map { it.name }
+            .map { resources.getIdentifier(it, "raw", application.packageName) }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        if (mMediaPlayer != null) {
-            mMediaPlayer?.stop()
-            mMediaPlayer?.release()
-            mMediaPlayer = null
+        mediaPlayer?.apply {
+            stop()
+            release()
         }
+        mediaPlayer = null
+
         val item = when (intent?.getStringExtra(BUNDLE_KEY_MOOD)) {
             BUNDLE_VAL_HAPPY -> R.raw.zaimponowales
             BUNDLE_VAL_SAD -> R.raw.zamknij_morde
-            else -> mResIds[mRand.nextInt(mResIds.size)]
+            else -> resIds[rand.nextInt(resIds.size)]
         }
-        mMediaPlayer = MediaPlayer.create(this, item)
-        mMediaPlayer?.setOnCompletionListener { stopSelf() }
-        mMediaPlayer?.start() // no need to call prepare(); create() does that for you
-        return Service.START_NOT_STICKY
+        mediaPlayer = MediaPlayer.create(this, item).apply {
+            setOnCompletionListener { stopSelf() }
+            start() // no need to call prepare(); create() does that for you
+        }
+        return START_NOT_STICKY
     }
 }
